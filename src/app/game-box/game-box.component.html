@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="columns is-centered">
+        <div class="box column is-one-third">
+            <h2 class="title has-text-centered">Typing Challenge</h2>
+
+            <p class="has-text-centered">
+                <span 
+                
+                *ngFor="let letter of randomText.split(''); let i = index"
+                [class]="getclassStyle(letter, enteredText[i])"
+                >{{ letter }}</span>
+            </p>
+            <div class="field">
+                <input (input)="onInput($event)" class="input" type="text" />
+            </div>
+            <div *ngIf="randomText === enteredText" class="box has-text-centered">
+                <p class="title">Correct</p>
+            </div>
+        </div>
+    </div>
+</div>
